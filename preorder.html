@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Porsche Süper Spor | Ön Sipariş</title>
+  <meta name="description" content="Modelini, rengini ve jantını seç; tahmini fiyatı gör ve ön talebini oluştur.">
+
+  <meta name="theme-color" content="#1d1f21">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top site-nav">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">PORSCHE</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainNav" aria-controls="mainNav"
+              aria-expanded="false" aria-label="Menüyü aç">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="models.html">Modeller</a></li>
+          <li class="nav-item"><a class="nav-link active" href="preorder.html">Ön Sipariş</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="icerik">
+    <header class="page-banner page-banner--preorder">
+      <div class="page-head container">
+        <h1 class="page-title">Ön sipariş</h1>
+        <p class="hero-sub">Modelini, rengini ve jantını seç. Ödeme alınmaz, ön talep ücretsizdir.</p>
+      </div>
+    </header>
+
+    <div class="container pb-5">
+      <div class="row g-4 g-xl-5">
+
+        <div class="col-lg-6 po-preview-col">
+          <aside class="po-preview" aria-live="polite">
+            <div class="po-media" id="po-media">
+              <img id="po-img" src="" alt="">
+            </div>
+            <div class="po-head">
+              <h2 class="po-model" id="po-model"></h2>
+              <p class="po-colorline"><span class="po-dot" id="po-dot"></span><span id="po-colorname"></span></p>
+            </div>
+            <dl class="po-lines" id="po-lines"></dl>
+            <div class="po-total">
+              <span>Tahmini toplam</span>
+              <strong id="po-total"></strong>
+            </div>
+          </aside>
+        </div>
+
+        <div class="col-lg-6">
+          <form id="po-form" class="po-form needs-validation" novalidate>
+
+            <fieldset class="po-step">
+              <legend><span>1</span> Model</legend>
+              <div class="po-options" id="opt-model"></div>
+            </fieldset>
+
+            <fieldset class="po-step">
+              <legend><span>2</span> Renk</legend>
+              <div class="po-swatches" id="opt-color"></div>
+            </fieldset>
+
+            <fieldset class="po-step">
+              <legend><span>3</span> Jant</legend>
+              <div class="po-options" id="opt-wheels"></div>
+            </fieldset>
+
+            <fieldset class="po-step">
+              <legend><span>4</span> Ekstralar</legend>
+              <div class="po-options" id="opt-extras"></div>
+            </fieldset>
+
+            <fieldset class="po-step">
+              <legend><span>5</span> Bilgilerin</legend>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="f-name">Ad soyad</label>
+                  <input class="form-control" id="f-name" name="name" type="text" required minlength="3" autocomplete="name">
+                  <div class="invalid-feedback">Ad ve soyadını yaz.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="f-email">E-posta</label>
+                  <input class="form-control" id="f-email" name="email" type="email" required autocomplete="email">
+                  <div class="invalid-feedback">Geçerli bir e-posta adresi yaz.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="f-phone">Telefon <span class="text-secondary">(isteğe bağlı)</span></label>
+                  <input class="form-control" id="f-phone" name="phone" type="tel" pattern="[0-9+()\s\-]{7,20}" autocomplete="tel">
+                  <div class="invalid-feedback">Telefon numarası geçersiz görünüyor.</div>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="f-city">Şehir</label>
+                  <input class="form-control" id="f-city" name="city" type="text" required autocomplete="address-level2">
+                  <div class="invalid-feedback">Şehrini yaz.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="f-note">Not <span class="text-secondary">(isteğe bağlı)</span></label>
+                  <textarea class="form-control" id="f-note" name="note" rows="3" maxlength="300"></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="f-consent" required>
+                    <label class="form-check-label" for="f-consent">
+                      Bunun bir portföy projesi olduğunu ve bilgilerimin hiçbir yere gönderilmediğini anladım.
+                    </label>
+                    <div class="invalid-feedback">Devam etmek için onaylamalısın.</div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-accent btn-lg rounded-pill px-5 w-100">Ön talebi oluştur</button>
+            <p class="po-note">Fiyatlar örnektir, vergiler hariçtir. Model seçtiğin rengi gösterir ama gerçek boya tonu farklı olabilir.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Form gönderildikten sonra çıkan özet -->
+  <div class="modal fade" id="doneModal" tabindex="-1" aria-labelledby="doneTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content car-modal">
+        <div class="modal-header border-0">
+          <h2 class="modal-title h4" id="doneTitle">Ön talebin hazır</h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Kapat"></button>
+        </div>
+        <div class="modal-body pt-0">
+          <p class="text-secondary">Referans numaran: <strong class="text-light" id="done-ref"></strong></p>
+          <dl class="spec-list" id="done-lines"></dl>
+          <p class="small text-secondary mb-0">Bu bir portföy projesidir. Bilgilerin hiçbir yere gönderilmedi ve kaydedilmedi.</p>
+        </div>
+        <div class="modal-footer border-0">
+          <a class="btn btn-outline-light rounded-pill" href="models.html">Modellere dön</a>
+          <button type="button" class="btn btn-accent rounded-pill px-4" data-bs-dismiss="modal">Tamam</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 text-center small text-secondary">
+    <div class="container">
+      <p class="mb-2">Designed by Ulaş Özgün Tiril</p>
+      <p class="mb-1">
+        3D modeller:
+        <a href="https://sketchfab.com/3d-models/2023-porsche-911-gt3-rs-27-carrera-tribute-992-f17a982d5d8a4d97baef4b00b51a4e9a" target="_blank" rel="noopener">911 GT3 RS</a>,
+        <a href="https://sketchfab.com/3d-models/2021-porsche-911-turbo-s-992-b6756fc06654405a839bf14e931e4c83" target="_blank" rel="noopener">911 Turbo S</a>,
+        <a href="https://sketchfab.com/3d-models/2025-porsche-taycan-turbo-gt-weissach-package-4e1abafe7cf5413587a421377624ba08" target="_blank" rel="noopener">Taycan Turbo GT</a>
+        (Ddiaz Design, Sketchfab,
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>)
+      </p>
+      <p class="mb-0">
+        Fotoğraflar, Wikimedia Commons: Turbo S
+        <a href="https://commons.wikimedia.org/wiki/File:Porsche_992_Turbo_S_1X7A0411.jpg" target="_blank" rel="noopener">Alexander Migl</a>
+        (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>), Taycan
+        <a href="https://commons.wikimedia.org/wiki/File:Porsche_Taycan_Turbo_GT_(53877763941).jpg" target="_blank" rel="noopener">David Merrett</a>
+        (<a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>)
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/vendor/model-viewer.min.js"></script>
+  <script src="js/cars.js"></script>
+  <script src="js/preorder.js"></script>
+</body>
+</html>
